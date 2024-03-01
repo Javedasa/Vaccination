@@ -19,6 +19,6 @@ public class UserRequestDto {
     int age;
     Gender gender;
     String contactNumber;
-    String email;
+    String emailId;
 
 }

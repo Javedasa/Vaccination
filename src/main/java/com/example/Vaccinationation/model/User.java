@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -25,7 +26,7 @@ public class User {
     Gender gender;
     @Column(unique = true,nullable = false)
     String contactNumber;
-    String email;
+    String emailId;
 
     boolean isDose1Taken;
     boolean isDose2Taken;
@@ -37,4 +38,5 @@ public class User {
 
     @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
     Dose2 dose2;
+
 }

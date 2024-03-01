@@ -20,9 +20,11 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     @CreationTimestamp
     Date appointmentDate;
     int doseNumber;
+
     @ManyToOne
     @JoinColumn
     User user;
