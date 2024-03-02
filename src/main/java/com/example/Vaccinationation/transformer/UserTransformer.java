@@ -1,7 +1,7 @@
 package com.example.Vaccinationation.transformer;
 
-import com.example.Vaccinationation.dto.UserRequestDto;
-import com.example.Vaccinationation.dto.UserResponseDto;
+import com.example.Vaccinationation.dto.requestDto.UserRequestDto;
+import com.example.Vaccinationation.dto.responseDto.UserResponseDto;
 import com.example.Vaccinationation.model.User;
 
 public class UserTransformer {

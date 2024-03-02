@@ -1,14 +1,12 @@
 package com.example.Vaccinationation.model;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -16,14 +14,19 @@ import java.util.Date;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "appointment")
+@Builder
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
+    String appointmentNumber;
+
     @CreationTimestamp
     Date appointmentDate;
-    int doseNumber;
+
+    @Enumerated(EnumType.STRING)
+    DoseNo doseNo;
 
     @ManyToOne
     @JoinColumn

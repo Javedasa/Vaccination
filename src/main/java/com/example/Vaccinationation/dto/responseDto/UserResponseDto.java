@@ -1,4 +1,4 @@
-package com.example.Vaccinationation.dto;
+package com.example.Vaccinationation.dto.responseDto;
 
 import lombok.Builder;
 import lombok.Getter;

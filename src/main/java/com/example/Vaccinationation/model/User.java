@@ -31,6 +31,23 @@ public class User {
     boolean isDose1Taken;
     boolean isDose2Taken;
 
+    public boolean isDose1Taken() {
+        return isDose1Taken;
+    }
+
+    public boolean isDose2Taken() {
+        return isDose2Taken;
+    }
+
+
+    public void setDose2Taken(boolean dose2Taken) {
+        isDose2Taken = dose2Taken;
+    }
+
+    public void setDose1Taken(boolean dose1Taken) {
+        isDose1Taken = dose1Taken;
+    }
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     List<Appointment> appointmentList=new ArrayList<>();
     @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)

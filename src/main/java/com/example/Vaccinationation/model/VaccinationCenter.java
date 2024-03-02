@@ -2,10 +2,7 @@ package com.example.Vaccinationation.model;
 
 import com.example.Vaccinationation.Enum.VaccinationCenterType;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
@@ -16,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 public class VaccinationCenter {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

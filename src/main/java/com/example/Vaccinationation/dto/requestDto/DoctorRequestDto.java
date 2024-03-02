@@ -1,24 +1,23 @@
-package com.example.Vaccinationation.dto;
+package com.example.Vaccinationation.dto.requestDto;
 
 import com.example.Vaccinationation.Enum.Gender;
-import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UserRequestDto {
+public class DoctorRequestDto {
+    //this is Id of vaccination center this is required to map doctor with this is for bidirectional mapping
+    int centerId;
     String name;
     int age;
     Gender gender;
     String contactNumber;
-    String emailId;
-
+    String email;
+    String address;
 }

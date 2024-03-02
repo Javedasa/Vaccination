@@ -7,9 +7,5 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User,Integer> {
     User findByContactNumber(String contactNumber);
-
-   // List<User> countOfUserWhoHaveNotTakenDose1NotDose2();
-
-    // List<User> countOfUserTakenDose1NotDose2();
       User findByEmailId(String emailId);
 }
