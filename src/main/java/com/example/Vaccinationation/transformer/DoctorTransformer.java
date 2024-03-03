@@ -20,7 +20,7 @@ public class DoctorTransformer {
         return doctor;
     }
     public static DoctorResponseDto DoctorToDoctorResponseDto(Doctor doctor){
-        CenterResponseDto centerResponseDto=Centertransformer.CenterToCenterResponseDto(doctor.getVaccinationCenter());
+        CenterResponseDto centerResponseDto= CenterTransformer.CenterToCenterResponseDto(doctor.getVaccinationCenter());
         DoctorResponseDto doctorResponseDto=DoctorResponseDto.builder()
                 .name(doctor.getName())
                 .emailId(doctor.getEmail())

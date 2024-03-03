@@ -19,8 +19,13 @@ public class AppointmentController {
     private AppointmentService appointmentService;
 
     @PostMapping("/bookAppointment")
-    public ResponseEntity bookAppointment(@RequestBody AppointmentRequestDto appointmentRequestDto){
-        AppointmentResponseDto appointmentResponseDto=appointmentService.bookAppointment(appointmentRequestDto);
-        return new ResponseEntity(appointmentResponseDto, HttpStatus.CREATED);
+    public ResponseEntity bookAppointment(@RequestBody AppointmentRequestDto appointmentRequestDto) throws Exception {
+        try{
+            AppointmentResponseDto appointmentResponseDto=appointmentService.bookAppointment(appointmentRequestDto);
+            return new ResponseEntity(appointmentResponseDto, HttpStatus.CREATED);
+        }
+        catch(Exception e){
+            return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
+        }
     }
 }

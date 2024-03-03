@@ -1,5 +1,6 @@
 package com.example.Vaccinationation.model;
 
+import com.example.Vaccinationation.Enum.DoseNo;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

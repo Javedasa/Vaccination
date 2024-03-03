@@ -4,7 +4,7 @@ import com.example.Vaccinationation.dto.requestDto.CenterRequestDto;
 import com.example.Vaccinationation.dto.responseDto.CenterResponseDto;
 import com.example.Vaccinationation.model.VaccinationCenter;
 
-public class Centertransformer {
+public class CenterTransformer {
 
     public static VaccinationCenter CenterRequestDtoToCenter(CenterRequestDto centerRequestDto){
         VaccinationCenter vaccinationCenter=VaccinationCenter.builder()
