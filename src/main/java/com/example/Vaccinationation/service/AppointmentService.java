@@ -92,7 +92,7 @@ public class AppointmentService {
         // send email
         String text = "Congrats!!" + user.getName() + " Your dose "+ appointmentRequestDto.getDoseNumber() + " has been booked!!";
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("backendmaydosify@gmail.com");
+        message.setFrom("backendproject80@gmail.com");
         message.setTo(user.getEmailId());
         message.setSubject("Appointment Booked !!!");
         message.setText(text);
