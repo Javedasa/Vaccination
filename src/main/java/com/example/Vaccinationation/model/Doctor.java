@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -20,12 +21,18 @@ public class Doctor {
     int id;
 
     String name;
+
     int age;
+
     @Enumerated(EnumType.STRING)
     Gender gender;
+
     String contactNumber;
+
     String email;
+
     String address;
+
     @OneToMany(mappedBy = "doctor",cascade = CascadeType.ALL)
     List<Appointment> appointmentList=new ArrayList<>();
 

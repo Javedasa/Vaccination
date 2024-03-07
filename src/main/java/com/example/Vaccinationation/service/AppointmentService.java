@@ -37,6 +37,8 @@ public class AppointmentService {
     @Autowired
     private JavaMailSender emailSender;
 
+    @Autowired
+    private CertificateService certificateService;
 
     public AppointmentResponseDto bookAppointment(AppointmentRequestDto appointmentRequestDto) throws Exception {
         //check whether user exist or not
@@ -58,6 +60,11 @@ public class AppointmentService {
            Dose1 dose1=dose1Service.createDose1(user,appointmentRequestDto.getVaccineType());
            user.setDose1Taken(true);
            user.setDose1(dose1);
+
+           Certificate certificate=certificateService.createCertificate(user);
+           user.setCertificate(certificate);
+           certificate.setUser(user);
+            userRepository.save(user);
         }
         else{
             //Dose2
@@ -67,7 +74,13 @@ public class AppointmentService {
             Dose2 dose2 = dose2Service.createDose2(user,appointmentRequestDto.getVaccineType());
             user.setDose2Taken(true);
             user.setDose2(dose2);
+
+            Certificate certificate=certificateService.createCertificate(user);
+            user.setCertificate(certificate);
+            certificate.setUser(user);
+            userRepository.save(user);
         }
+
 
         Appointment appointment=Appointment.builder()
                 .appointmentNumber(String.valueOf(UUID.randomUUID()))
@@ -87,6 +100,7 @@ public class AppointmentService {
         Appointment savedAppointment = savedUser.getAppointmentList().get(savedUser.getAppointmentList().size()-1);
         doctor.getAppointmentList().add(savedAppointment);
         doctorRepository.save(doctor);
+
 
 
         // send email

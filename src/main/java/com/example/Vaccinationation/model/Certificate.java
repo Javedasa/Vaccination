@@ -1,11 +1,8 @@
 package com.example.Vaccinationation.model;
 
-import com.example.Vaccinationation.Enum.VaccineType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.UUID;
 
 @Entity
 @Getter
@@ -13,15 +10,13 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "certificate")
 @Builder
-public class Dose2 {
+public class Certificate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    Integer id;
 
-    UUID doseId;
-    @Enumerated(value = EnumType.STRING)
-    VaccineType vaccineType;
     @OneToOne
     @JoinColumn
     User user;

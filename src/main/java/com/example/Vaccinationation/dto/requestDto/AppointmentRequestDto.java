@@ -13,7 +13,10 @@ import lombok.experimental.FieldDefaults;
 public class AppointmentRequestDto {
 
     DoseNo doseNumber;
+
     int userId;
+
     int doctorId;
+
     VaccineType vaccineType;
 }

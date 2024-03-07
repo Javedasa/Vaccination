@@ -21,14 +21,19 @@ public class User {
     int id;
 
     String name;
+
     int age;
+
     @Enumerated(value = EnumType.STRING)
     Gender gender;
+
     @Column(unique = true,nullable = false)
     String contactNumber;
+
     String emailId;
 
     boolean isDose1Taken;
+
     boolean isDose2Taken;
 
     public boolean isDose1Taken() {
@@ -38,7 +43,6 @@ public class User {
     public boolean isDose2Taken() {
         return isDose2Taken;
     }
-
 
     public void setDose2Taken(boolean dose2Taken) {
         isDose2Taken = dose2Taken;
@@ -50,10 +54,13 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     List<Appointment> appointmentList=new ArrayList<>();
+
     @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
     Dose1 dose1;
 
     @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
     Dose2 dose2;
 
+    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
+    Certificate certificate;
 }
